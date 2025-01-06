@@ -1,18 +1,20 @@
 import { ITranslateOptions, TranslateManager } from "comment-translate-manager";
+import got from 'got';
 import { getConfig, onConfigChange } from "../configuration";
-import { env, ExtensionContext } from "vscode";
+import { env, ExtensionContext, window } from "vscode";
 import { ITranslateConfig, TranslateExtensionProvider } from "./translateExtension";
 import { GoogleTranslate } from "./GoogleTranslate";
 import { BingTranslate } from "./BingTranslate";
 import { detectLanguage } from "../lang";
 import { CopilotTranslate } from "./CopilotTranslate";
 import { TranSmartTranslate } from "./TranSmartTranslate";
+import { MTranServerTranslate } from "./MTranServerTranslate";
 
 
 export let translateManager: TranslateManager;
 export let translateExtensionProvider: TranslateExtensionProvider
 
-export function initTranslate(context: ExtensionContext) {
+export async function initTranslate(context: ExtensionContext) {
 
     let userLanguage = getUserLanguage();
     const targetLanguage = getConfig('targetLanguage', userLanguage);
@@ -48,9 +50,27 @@ export function initTranslate(context: ExtensionContext) {
         title: 'Tencent TranSmart translate',
         ctor: TranSmartTranslate,
         translate: 'TranSmart'
+    },
+    {
+        title: 'MTranServer translate',
+        ctor: MTranServerTranslate,
+        translate: 'MTranServer'
     }];
     translateExtensionProvider = new TranslateExtensionProvider(translateManager, buildInTranslate);
-    translateExtensionProvider.init(getConfig<string>('source', ''));
+    let source = getConfig<string>('source', '');
+    if (source === 'MTranServer') {
+        try {
+            let apiUrl = getConfig<string>('MTranServer.apiUrl', 'http://localhost:8989');
+            if (apiUrl.endsWith('/')) {
+                apiUrl = apiUrl.slice(0, -1);
+            }
+            await got.get(`${apiUrl}/health`, { timeout: { request: 1000 } });
+        } catch (error) {
+            source = 'Google';
+            window.showWarningMessage('MTranServer service connection failed, using default engine (Google).');
+        }
+    }
+    translateExtensionProvider.init(source);
 
     return translateManager;
 }

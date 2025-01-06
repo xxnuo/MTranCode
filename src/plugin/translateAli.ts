@@ -4,7 +4,7 @@ import * as RPCClient from '@alicloud/pop-core';
 import { workspace } from 'vscode';
 import { ITranslate, ITranslateOptions,encodeMarkdownUriComponent } from 'comment-translate-manager';
 
-const PREFIXCONFIG = 'commentTranslate.translationAli';
+const PREFIXCONFIG = 'mtrancode.translationAli';
 const PARAMS = {
     "RegionId": "cn-hangzhou",
     "FormatType": "text",

@@ -11,6 +11,9 @@ module.exports = {
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node','wasm'],
     setupFiles: ['./test/setup.ts'],
     testMatch: [path.join(__dirname, 'test/non-extension/**/*.test.ts')],
+    moduleNameMapper: {
+        '^vscode$': 'jest-mock-vscode',
+    },
     transformIgnorePatterns: [
         'node_modules/(?!(got)/)', // 允许 Jest 转换 got 模块
       ],

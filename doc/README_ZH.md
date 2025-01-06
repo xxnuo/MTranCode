@@ -1,3 +1,9 @@
+# MTranCode
+
+此扩展是 [intellism/vscode-comment-translate](https://github.com/intellism/vscode-comment-translate) 的一个分叉, 主要更改:
+
+- 添加内置的 MTranServer 支持
+
 # VSCode 注释翻译插件
 
 这个插件帮助开发者翻译代码中的注释、字符串、代码提示、错误提醒和变量名称等内容。
@@ -37,7 +43,7 @@
   > - 需要提前安装GitHub Copilot Chat插件，并拥有其授权。
   > - 针对GitHub Copilot用户，目前支持在Chat框内翻译，暂时不支持注释、文本等内容使用该功能进行翻译。
 
-本插件扩展了GitHub Copilot，可以在Chat框中通过`@translate`进行翻译，使用Copilot提供的AI大模型进行文本翻译，翻译目标语言为CommentTranslate设置的目标语言。在Editor中选择文本后，可以通过命令快速发送到GitHub Copilot Chat进行翻译。
+本插件扩展了GitHub Copilot，可以在Chat框中通过`@translate`进行翻译，使用Copilot提供的AI大模型进行文本翻译，翻译目标语言为MTranCode设置的目标语言。在Editor中选择文本后，可以通过命令快速发送到GitHub Copilot Chat进行翻译。
 ![copilot](./image/copilot.gif)
 
 ## 有用的命令
@@ -62,16 +68,16 @@
 第三方提供的翻译服务可以在插件市场搜索`@tag:translateSource`找到。用户可以通过插件配置选择需要使用的翻译服务，或者自定义扩展翻译服务。 [更多链接](https://github.com/intellism/vscode-comment-translate/wiki/%E7%BF%BB%E8%AF%91%E6%9C%8D%E5%8A%A1)
 
 ## 常用配置
-* `commentTranslate.hover.enabled`: 开启/关闭悬停翻译（可以通过状态快速设置）
-* `commentTranslate.hover.concise`: 开启/关闭简洁模式。开启后只有按住ctrl或command才会触发悬浮翻译
-* `commentTranslate.hover.string`: 开启/关闭字符串悬停翻译
-* `commentTranslate.hover.content`: 开启/关闭翻译悬停内容
-* `commentTranslate.multilineMerge`: 合并多行注释
-* `commentTranslate.targetLanguage`: 翻译目标语言，没有设置的情况下使用vscode本地语言。（可以通过状态快速设置）
-* `commentTranslate.source`: 翻译服务源配置。建议通过命令完成设置。 支持插件扩展翻译服务源。 [example](https://github.com/intellism/deepl-translate)
-* `commentTranslate.maxTranslationLength`: 最长翻译长度配置。规避过长字符翻译引起收费过多问题
-* `commentTranslate.browse.enabled`: 开启/关闭项目沉浸浏览翻译功能
-* `commentTranslate.googleTranslate.mirror`: 解决国内服务不可访问问题。 [文档](https://hcfy.app/blog/2022/09/28/ggg#%E6%96%B9%E6%A1%88-c%E4%BD%BF%E7%94%A8%E9%95%9C%E5%83%8F%E5%9C%B0%E5%9D%80%E6%9C%80%E7%AE%80%E5%8D%95)
+* `mtrancode.hover.enabled`: 开启/关闭悬停翻译（可以通过状态快速设置）
+* `mtrancode.hover.concise`: 开启/关闭简洁模式。开启后只有按住ctrl或command才会触发悬浮翻译
+* `mtrancode.hover.string`: 开启/关闭字符串悬停翻译
+* `mtrancode.hover.content`: 开启/关闭翻译悬停内容
+* `mtrancode.multilineMerge`: 合并多行注释
+* `mtrancode.targetLanguage`: 翻译目标语言，没有设置的情况下使用vscode本地语言。（可以通过状态快速设置）
+* `mtrancode.source`: 翻译服务源配置。建议通过命令完成设置。 支持插件扩展翻译服务源。 [example](https://github.com/intellism/deepl-translate)
+* `mtrancode.maxTranslationLength`: 最长翻译长度配置。规避过长字符翻译引起收费过多问题
+* `mtrancode.browse.enabled`: 开启/关闭项目沉浸浏览翻译功能
+* `mtrancode.googleTranslate.mirror`: 解决国内服务不可访问问题。 [文档](https://hcfy.app/blog/2022/09/28/ggg#%E6%96%B9%E6%A1%88-c%E4%BD%BF%E7%94%A8%E9%95%9C%E5%83%8F%E5%9C%B0%E5%9D%80%E6%9C%80%E7%AE%80%E5%8D%95)
 
 ## 支持我们
 

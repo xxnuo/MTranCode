@@ -1,3 +1,9 @@
+# MTranCode
+
+This extension is a fork of the [intellism/vscode-comment-translate](https://github.com/intellism/vscode-comment-translate), with the following changes:
+
+- Add built-in MTranServer support
+
 # VSCode Comment Translation Extension
 
 This extension helps developers translate comments, strings, code hints, error messages, and variable names in their code.
@@ -37,7 +43,7 @@ The extension can translate source code content and quickly replace it in the do
   > - Requires pre-installation of the GitHub Copilot Chat extension and authorization.
   > - For GitHub Copilot users, translation is currently supported in the Chat box, but not for comments, text, etc.
 
-This extension extends GitHub Copilot by enabling translations in the Chat box using Copilot's AI model. The target language is set by CommentTranslate. Select text in the Editor and send it to GitHub Copilot Chat for quick translation using commands.
+This extension extends GitHub Copilot by enabling translations in the Chat box using Copilot's AI model. The target language is set by MTranCode. Select text in the Editor and send it to GitHub Copilot Chat for quick translation using commands.
 ![copilot](./doc/image/copilot.gif)
 
 ## Useful Commands
@@ -62,15 +68,15 @@ The extension supports the following translation services:
 Third-party translation services can be found by searching for `@tag:translateSource` in the plugin market. Users can choose the desired translation service through the plugin configuration or expand it by customizing the translation service. [More Links](https://github.com/intellism/vscode-comment-translate/wiki/Translation-Service)
 
 ## Common Configurations
-* `commentTranslate.hover.enabled`: Enable/disable hover translation (quickly set through status)
-* `commentTranslate.hover.concise`: Enable/disable concise mode. Only triggers hover translation when pressing ctrl or command
-* `commentTranslate.hover.string`: Enable/disable string hover translation
-* `commentTranslate.hover.content`: Enable/disable translation of hover content
-* `commentTranslate.multilineMerge`: Merge multiline comments
-* `commentTranslate.targetLanguage`: Translation target language, uses the local VSCode language if not set (quickly set through status)
-* `commentTranslate.source`: Translation service source configuration. It is recommended to set it through commands. Supports plugin extensions for translation service sources. [example](https://github.com/intellism/deepl-translate)
-* `commentTranslate.maxTranslationLength`: Maximum translation length configuration to avoid excessive charges for long character translations
-* `commentTranslate.browse.enabled`: Enable/disable project immersive browsing translation function
+* `mtrancode.hover.enabled`: Enable/disable hover translation (quickly set through status)
+* `mtrancode.hover.concise`: Enable/disable concise mode. Only triggers hover translation when pressing ctrl or command
+* `mtrancode.hover.string`: Enable/disable string hover translation
+* `mtrancode.hover.content`: Enable/disable translation of hover content
+* `mtrancode.multilineMerge`: Merge multiline comments
+* `mtrancode.targetLanguage`: Translation target language, uses the local VSCode language if not set (quickly set through status)
+* `mtrancode.source`: Translation service source configuration. It is recommended to set it through commands. Supports plugin extensions for translation service sources. [example](https://github.com/intellism/deepl-translate)
+* `mtrancode.maxTranslationLength`: Maximum translation length configuration to avoid excessive charges for long character translations
+* `mtrancode.browse.enabled`: Enable/disable project immersive browsing translation function
 
 
 ## Support Us

@@ -61,7 +61,7 @@ class CommentDecorationManager {
         let docTemporarilyToggled = uri && this.tempSet.has(uri);
         let docBrowseEnabled = docTemporarilyToggled ? !this.browseEnable : this.browseEnable;
         let ultimatelyBrowseEnable = docBrowseEnabled && this.hoverEnable;
-        commands.executeCommand('setContext', 'commentTranslate.ultimatelyBrowseEnable', ultimatelyBrowseEnable);
+        commands.executeCommand('setContext', 'mtrancode.ultimatelyBrowseEnable', ultimatelyBrowseEnable);
         return ultimatelyBrowseEnable;
     }
 

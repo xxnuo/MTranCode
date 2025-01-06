@@ -1,21 +1,26 @@
 {
-    "name": "comment-translate",
-    "displayName": "%commentTranslate.displayName%",
-    "description": "%commentTranslate.description%",
-    "version": "3.0.0",
-    "publisher": "intellsmi",
+    "name": "mtrancode",
+    "displayName": "MTranCode",
+    "description": "Translate comments, strings, code hints locally.",
+    "version": "3.0.3",
+    "publisher": "xxnuo",
+    "contributors": [
+        {
+            "name": "xxnuo"
+        }
+    ],
     "author": {
         "name": "Zheng MaoWei",
         "email": "intellsmi@gmail.com"
     },
     "license": "SEE LICENSE IN LICENSE",
-    "homepage": "https://github.com/intellism/vscode-comment-translate/blob/master/README.md",
+    "homepage": "https://github.com/xxnuo/MTranCode/blob/master/README.md",
     "bugs": {
-        "url": "https://github.com/intellism/vscode-comment-translate/issues"
+        "url": "https://github.com/xxnuo/MTranCode/issues"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/intellism/vscode-comment-translate.git"
+        "url": "https://github.com/xxnuo/MTranCode.git"
     },
     "engines": {
         "vscode": "^1.92.0"
@@ -42,218 +47,221 @@
     "main": "./dist/extension",
     "contributes": {
         "chatParticipants": [
-			{
-				"id": "intellism.translate",
-				"fullName": "Comment Translate",
-				"name": "translate",
-				"description": "I can help you translate into other languages.",
-				"isSticky": true,
-				"commands": [
-					{
-						"name": "word",
-						"description": "Key words explained in detail"
-					},
+            {
+                "id": "intellism.translate",
+                "fullName": "MTranCode",
+                "name": "translate",
+                "description": "%mtrancode.chat.description%",
+                "isSticky": true,
+                "commands": [
                     {
-						"name": "var",
-						"description": "Translate description to variable naming"
-					}
-				]
-			}
-		],
-        "commands": [
-            {
-                "command": "commentTranslate.select",
-                "title": "%commentTranslate.command.select%",
-                "category": "Comment Translate"
-            },
-            {
-                "command": "commentTranslate.translateForCopilotChat",
-                "title": "%commentTranslate.command.translateForCopilotChat%",
-                "category": "Comment Translate"
-            },
-            {
-                "command": "commentTranslate.nameVariable",
-                "title": "%commentTranslate.command.nameVariable%",
-                "category": "Comment Translate"
-            },
-            {
-                "command": "commentTranslate.selectAllText",
-                "title": "%commentTranslate.command.selectAllText%",
-                "category": "Comment Translate"
-            },
-            {
-                "command": "commentTranslate.selectAllComment",
-                "title": "%commentTranslate.command.selectAllComment%",
-                "category": "Comment Translate"
-            },
-            {
-                "command": "commentTranslate.translateAllText",
-                "title": "%commentTranslate.command.translateAllText%",
-                "category": "Comment Translate"
-            },
-            {
-                "command": "commentTranslate.translateAllComment",
-                "title": "%commentTranslate.command.translateAllComment%",
-                "category": "Comment Translate"
-            },
-            {
-                "command": "commentTranslate.clipboard",
-                "title": "%commentTranslate.command.clipboard%",
-                "category": "Comment Translate"
-            },
-            {
-                "command": "commentTranslate.changeTranslateSource",
-                "title": "%commentTranslate.command.changeTranslateSource%",
-                "category": "Comment Translate"
-            },
-            {
-                "command": "commentTranslate.changeTargetLanguage",
-                "title": "%commentTranslate.command.changeTargetLanguage%",
-                "category": "Comment Translate"
-            },
-            {
-                "command": "commentTranslate.toggleBrowseMode",
-                "title": "%commentTranslate.command.toggleBrowseMode%",
-                "category": "Comment Translate"
-            },
-            {
-                "command": "commentTranslate.toggleDocumentBrowseMode",
-                "title": "%commentTranslate.command.toggleDocumentBrowseMode%",
-                "category": "Comment Translate"
-            },
-            {
-                "command": "commentTranslate.openDocumentBrowseMode",
-                "title": "%commentTranslate.command.openDocumentBrowseMode%",
-                "icon":"$(eye-closed)",
-                "category": "Comment Translate"
-            },
-            {
-                "command": "commentTranslate.closeDocumentBrowseMode",
-                "title": "%commentTranslate.command.closeDocumentBrowseMode%",
-                "icon":"$(eye)",
-                "category": "Comment Translate"
-            },
-            {
-                "command": "commentTranslate.replaceSelections",
-                "title": "%commentTranslate.command.replaceSelections%",
-                "category": "Comment Translate"
+                        "name": "word",
+                        "description": "%mtrancode.chat.command.word%"
+                    },
+                    {
+                        "name": "var",
+                        "description": "%mtrancode.chat.command.var%"
+                    }
+                ]
             }
         ],
-
+        "commands": [
+            {
+                "command": "mtrancode.select",
+                "title": "%mtrancode.command.select%",
+                "category": "MTranCode"
+            },
+            {
+                "command": "mtrancode.translateForCopilotChat",
+                "title": "%mtrancode.command.translateForCopilotChat%",
+                "category": "MTranCode"
+            },
+            {
+                "command": "mtrancode.nameVariable",
+                "title": "%mtrancode.command.nameVariable%",
+                "category": "MTranCode"
+            },
+            {
+                "command": "mtrancode.selectAllText",
+                "title": "%mtrancode.command.selectAllText%",
+                "category": "MTranCode"
+            },
+            {
+                "command": "mtrancode.selectAllComment",
+                "title": "%mtrancode.command.selectAllComment%",
+                "category": "MTranCode"
+            },
+            {
+                "command": "mtrancode.translateAllText",
+                "title": "%mtrancode.command.translateAllText%",
+                "category": "MTranCode"
+            },
+            {
+                "command": "mtrancode.translateAllComment",
+                "title": "%mtrancode.command.translateAllComment%",
+                "category": "MTranCode"
+            },
+            {
+                "command": "mtrancode.clipboard",
+                "title": "%mtrancode.command.clipboard%",
+                "category": "MTranCode"
+            },
+            {
+                "command": "mtrancode.changeTranslateSource",
+                "title": "%mtrancode.command.changeTranslateSource%",
+                "category": "MTranCode"
+            },
+            {
+                "command": "mtrancode.changeTargetLanguage",
+                "title": "%mtrancode.command.changeTargetLanguage%",
+                "category": "MTranCode"
+            },
+            {
+                "command": "mtrancode.toggleBrowseMode",
+                "title": "%mtrancode.command.toggleBrowseMode%",
+                "category": "MTranCode"
+            },
+            {
+                "command": "mtrancode.toggleDocumentBrowseMode",
+                "title": "%mtrancode.command.toggleDocumentBrowseMode%",
+                "category": "MTranCode"
+            },
+            {
+                "command": "mtrancode.openDocumentBrowseMode",
+                "title": "%mtrancode.command.openDocumentBrowseMode%",
+                "icon": "$(eye-closed)",
+                "category": "MTranCode"
+            },
+            {
+                "command": "mtrancode.closeDocumentBrowseMode",
+                "title": "%mtrancode.command.closeDocumentBrowseMode%",
+                "icon": "$(eye)",
+                "category": "MTranCode"
+            },
+            {
+                "command": "mtrancode.replaceSelections",
+                "title": "%mtrancode.command.replaceSelections%",
+                "category": "MTranCode"
+            }
+        ],
         "keybindings": [
             {
-                "command": "commentTranslate.select",
+                "command": "mtrancode.select",
                 "key": "alt+shift+s",
                 "mac": "ctrl+shift+s"
             },
             {
-                "command": "commentTranslate.nameVariable",
+                "command": "mtrancode.nameVariable",
                 "key": "alt+shift+n",
                 "mac": "ctrl+shift+n",
-                "when":"resourceLangId in commentTranslate.canLanguages"
+                "when": "resourceLangId in mtrancode.canLanguages"
             },
             {
-                "command": "commentTranslate.translateForCopilotChat",
+                "command": "mtrancode.translateForCopilotChat",
                 "key": "alt+shift+y",
                 "mac": "ctrl+shift+y",
-                "when":"github.copilot.activated"
+                "when": "github.copilot.activated"
             },
             {
-                "command": "commentTranslate.replaceSelections",
+                "command": "mtrancode.replaceSelections",
                 "when": "editorHasSelection",
                 "mac": "ctrl+shift+t",
                 "key": "alt+shift+t"
             },
             {
-                "command": "commentTranslate.toggleDocumentBrowseMode",
+                "command": "mtrancode.toggleDocumentBrowseMode",
                 "key": "alt+shift+z",
                 "mac": "ctrl+shift+z"
             },
             {
-                "command": "commentTranslate.toggleBrowseMode",
+                "command": "mtrancode.toggleBrowseMode",
                 "key": "alt+shift+b",
                 "mac": "ctrl+shift+b"
             }
         ],
         "submenus": [
             {
-                "id": "commentTranslate",
-                "label": "%commentTranslate.displayName%"
+                "id": "mtrancode",
+                "label": "MTranCode"
             }
         ],
         "menus": {
-            "commandPalette":[
+            "commandPalette": [
                 {
-                    "command": "commentTranslate.openDocumentBrowseMode",
-                    "when":"false"
+                    "command": "mtrancode.openDocumentBrowseMode",
+                    "when": "false"
                 },
                 {
-                    "command": "commentTranslate.closeDocumentBrowseMode",
-                    "when":"false"
+                    "command": "mtrancode.closeDocumentBrowseMode",
+                    "when": "false"
                 },
                 {
-                    "command": "commentTranslate.translateForCopilotChat",
-                    "when":"github.copilot.activated"
+                    "command": "mtrancode.translateForCopilotChat",
+                    "when": "github.copilot.activated"
                 }
             ],
             "editor/title": [
                 {
-                    "command": "commentTranslate.openDocumentBrowseMode",
-                    "when":"!commentTranslate.ultimatelyBrowseEnable && config.commentTranslate.hover.enabled && resourceLangId in commentTranslate.canLanguages",
+                    "command": "mtrancode.openDocumentBrowseMode",
+                    "when": "!mtrancode.ultimatelyBrowseEnable && config.mtrancode.hover.enabled && resourceLangId in mtrancode.canLanguages",
                     "group": "navigation"
                 },
                 {
-                    "command": "commentTranslate.closeDocumentBrowseMode",
-                    "when":"commentTranslate.ultimatelyBrowseEnable && config.commentTranslate.hover.enabled && resourceLangId in commentTranslate.canLanguages",
+                    "command": "mtrancode.closeDocumentBrowseMode",
+                    "when": "mtrancode.ultimatelyBrowseEnable && config.mtrancode.hover.enabled && resourceLangId in mtrancode.canLanguages",
                     "group": "navigation"
                 }
             ],
             "editor/context": [
                 {
-                    "submenu": "commentTranslate",
+                    "submenu": "mtrancode",
                     "group": "1_translate@0"
                 }
             ],
-            "commentTranslate": [
+            "mtrancode": [
                 {
-                    "command": "commentTranslate.replaceSelections",
+                    "command": "mtrancode.replaceSelections",
                     "group": "1_translate@1"
                 },
                 {
-                    "command": "commentTranslate.nameVariable",
-                    "when":"resourceLangId in commentTranslate.canLanguages",
+                    "command": "mtrancode.nameVariable",
+                    "when": "resourceLangId in mtrancode.canLanguages",
                     "group": "1_translate@2"
                 },
                 {
-                    "command": "commentTranslate.translateForCopilotChat",
-                    "when":"github.copilot.activated",
+                    "command": "mtrancode.translateForCopilotChat",
+                    "when": "github.copilot.activated",
                     "group": "1_translate@3"
-                },{
-                    "command": "commentTranslate.translateAllText",
-                    "when":"resourceLangId in commentTranslate.canLanguages",
+                },
+                {
+                    "command": "mtrancode.translateAllText",
+                    "when": "resourceLangId in mtrancode.canLanguages",
                     "group": "2_file@1"
-                },{
-                    "command": "commentTranslate.translateAllComment",
-                    "when":"resourceLangId in commentTranslate.canLanguages",
+                },
+                {
+                    "command": "mtrancode.translateAllComment",
+                    "when": "resourceLangId in mtrancode.canLanguages",
                     "group": "2_file@2"
-                },{
-                    "command": "commentTranslate.selectAllText",
-                    "when":"resourceLangId in commentTranslate.canLanguages",
+                },
+                {
+                    "command": "mtrancode.selectAllText",
+                    "when": "resourceLangId in mtrancode.canLanguages",
                     "group": "3_select@1"
-                },{
-                    "command": "commentTranslate.selectAllComment",
-                    "when":"resourceLangId in commentTranslate.canLanguages",
+                },
+                {
+                    "command": "mtrancode.selectAllComment",
+                    "when": "resourceLangId in mtrancode.canLanguages",
                     "group": "3_select@2"
                 }
             ]
         },
         "configuration": [
             {
-                "title": "Comment Translate Configuration",
+                "title": "MTranCode Configuration",
                 "type": "Object",
                 "order": 11,
                 "properties": {
-                    "commentTranslate.sourceLanguage": {
+                    "mtrancode.sourceLanguage": {
                         "type": "string",
                         "enum": [
                             "auto",
@@ -481,9 +489,9 @@
                         ],
                         "order": 26,
                         "default": "auto",
-                        "description": "%commentTranslate.configuration.sourceLanguage%"
+                        "description": "%mtrancode.configuration.sourceLanguage%"
                     },
-                    "commentTranslate.targetLanguage": {
+                    "mtrancode.targetLanguage": {
                         "type": "string",
                         "enum": [
                             "en",
@@ -708,96 +716,96 @@
                             "Zulu"
                         ],
                         "order": 26,
-                        "description": "%commentTranslate.configuration.targetLanguage%"
+                        "description": "%mtrancode.configuration.targetLanguage%"
                     },
-                    "commentTranslate.multiLineMerge": {
+                    "mtrancode.multiLineMerge": {
                         "type": "boolean",
                         "default": false,
                         "order": 25,
-                        "description": "%commentTranslate.configuration.MultilineMerge%"
+                        "description": "%mtrancode.configuration.MultilineMerge%"
                     },
-                    "commentTranslate.selectTargetLanguageWhenReplacing": {
+                    "mtrancode.selectTargetLanguageWhenReplacing": {
                         "type": "boolean",
                         "default": false,
                         "order": 27,
-                        "description": "%commentTranslate.configuration.selectTargetLanguageWhenReplacing%"
+                        "description": "%mtrancode.configuration.selectTargetLanguageWhenReplacing%"
                     },
-                    "commentTranslate.hover.concise": {
+                    "mtrancode.hover.concise": {
                         "type": "boolean",
                         "default": false,
                         "order": 22,
-                        "description": "%commentTranslate.configuration.concise%"
+                        "description": "%mtrancode.configuration.concise%"
                     },
-                    "commentTranslate.hover.content": {
+                    "mtrancode.hover.content": {
                         "type": "boolean",
                         "default": true,
                         "order": 22,
-                        "description": "%commentTranslate.configuration.contentHover%"
+                        "description": "%mtrancode.configuration.contentHover%"
                     },
-                    "commentTranslate.hover.variable": {
+                    "mtrancode.hover.variable": {
                         "type": "boolean",
                         "default": false,
                         "order": 24,
-                        "description": "%commentTranslate.configuration.variableHover%"
+                        "description": "%mtrancode.configuration.variableHover%"
                     },
-                    "commentTranslate.hover.nearShow": {
+                    "mtrancode.hover.nearShow": {
                         "type": "boolean",
                         "default": true,
                         "order": 25,
-                        "description": "Show hover overlay near cursor."
+                        "description": "%mtrancode.configuration.hover.nearShow%"
                     },
-                    "commentTranslate.hover.string": {
+                    "mtrancode.hover.string": {
                         "type": "boolean",
                         "default": false,
                         "order": 23,
-                        "description": "%commentTranslate.configuration.stringHover%"
+                        "description": "%mtrancode.configuration.stringHover%"
                     },
-                    "commentTranslate.hover.enabled": {
+                    "mtrancode.hover.enabled": {
                         "type": "boolean",
                         "default": true,
                         "order": 21,
-                        "description": "%commentTranslate.configuration.openHover%"
+                        "description": "%mtrancode.configuration.openHover%"
                     },
-                    "commentTranslate.browse.enabled": {
+                    "mtrancode.browse.enabled": {
                         "type": "boolean",
                         "default": false,
-                        "description": "%commentTranslate.configuration.browseEnabled%"
+                        "description": "%mtrancode.configuration.browseEnabled%"
                     },
-                    "commentTranslate.browse.mode": {
+                    "mtrancode.browse.mode": {
                         "type": "string",
                         "default": "contrast",
                         "enum": [
                             "contrast",
                             "inplace"
                         ],
-                        "description": "%commentTranslate.configuration.browseMode%"
+                        "description": "%mtrancode.configuration.browseMode%"
                     },
-                    "commentTranslate.source": {
+                    "mtrancode.source": {
                         "type": "string",
-                        "default": "Google",
+                        "default": "MTranServer",
                         "order": 27,
-                        "description": "%commentTranslate.configuration.source%"
+                        "description": "%mtrancode.configuration.source%"
                     },
-                    "commentTranslate.maxTranslationLength": {
+                    "mtrancode.maxTranslationLength": {
                         "type": "number",
                         "default": "10000",
                         "order": 28,
-                        "description": "%commentTranslate.configuration.maxTranslationLength%"
+                        "description": "%mtrancode.configuration.maxTranslationLength%"
                     },
-                    "commentTranslate.ignore": {
+                    "mtrancode.ignore": {
                         "type": "array",
-                        "title": "Ignore text",
+                        "title": "%mtrancode.configuration.ignore.title%",
                         "items": {
                             "type": "object",
-                            "title": "Ignore text item",
+                            "title": "%mtrancode.configuration.ignore.item.title%",
                             "properties": {
                                 "languageId": {
                                     "type": "string",
-                                    "title": "Language id"
+                                    "title": "%mtrancode.configuration.ignore.item.languageId%"
                                 },
                                 "regular": {
                                     "type": "string",
-                                    "title": "Regular expression"
+                                    "title": "%mtrancode.configuration.ignore.item.regular%"
                                 }
                             }
                         },
@@ -815,41 +823,53 @@
                 }
             },
             {
-                "title": "ALI Translate Configuration",
+                "title": "MTranServer Configuration",
                 "type": "Object",
                 "order": 12,
                 "properties": {
-                    "commentTranslate.translationAli.accessKeyId": {
+                    "mtrancode.MTranServer.apiUrl": {
                         "type": "string",
-                        "description": "accessKeyId"
+                        "default": "http://localhost:8989",
+                        "description": "%mtrancode.configuration.mtran.apiUrl%"
+                    }
+                }
+            },
+            {
+                "title": "ALI Translate Configuration",
+                "type": "Object",
+                "order": 13,
+                "properties": {
+                    "mtrancode.translationAli.accessKeyId": {
+                        "type": "string",
+                        "description": "%mtrancode.configuration.ali.accessKeyId%"
                     },
-                    "commentTranslate.translationAli.accessKeySecret": {
+                    "mtrancode.translationAli.accessKeySecret": {
                         "type": "string",
-                        "description": "accessKeySecret"
+                        "description": "%mtrancode.configuration.ali.accessKeySecret%"
                     }
                 }
             },
             {
                 "title": "Google Translate Configuration",
                 "type": "Object",
-                "order": 12,
+                "order": 14,
                 "properties": {
-                    "commentTranslate.googleTranslate.tld": {
+                    "mtrancode.googleTranslate.tld": {
                         "type": "string",
                         "enum": [
                             "cn",
                             "com"
                         ],
                         "enumDescriptions": [
-                            "Will request 'translate.google.cn' api",
-                            "Will request 'translate.google.com' api"
+                            "%mtrancode.configuration.google.tld.cn%",
+                            "%mtrancode.configuration.google.tld.com%"
                         ],
                         "default": "com",
-                        "description": "Determine the requested server address"
+                        "description": "%mtrancode.configuration.google.tld%"
                     },
-                    "commentTranslate.googleTranslate.mirror": {
+                    "mtrancode.googleTranslate.mirror": {
                         "type": "string",
-                        "markdownDescription": "Determine the requested server mirror address,more read [mirror docs](https://hcfy.app/blog/2022/09/28/ggg#%E6%96%B9%E6%A1%88-c%E4%BD%BF%E7%94%A8%E9%95%9C%E5%83%8F%E5%9C%B0%E5%9D%80%E6%9C%80%E7%AE%80%E5%8D%95)."
+                        "markdownDescription": "%mtrancode.configuration.google.mirror%"
                     }
                 }
             }
@@ -857,17 +877,18 @@
         "translates": [
             {
                 "translate": "ali.cloud",
-                "title": "Ali Cloud Translate"
+                "title": "%mtrancode.translates.ali%"
             }
         ]
     },
     "scripts": {
-        "vscode:prepublish": "npm run package",
+        "vscode:prepublish": "bun run package",
         "webpack": "webpack --mode development",
         "webpack-dev": "webpack --mode development --watch",
-        "package": "npm test && webpack --mode production --devtool hidden-source-map",
+        "package": "bun run test && webpack --mode production --devtool hidden-source-map",
         "test": "jest",
-        "test-compile": "tsc -p ./"
+        "test-compile": "tsc -p ./",
+        "build": "bunx vsce package"
     },
     "dependencies": {
         "@alicloud/pop-core": "^1.7.10",

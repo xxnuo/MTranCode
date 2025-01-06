@@ -1,4 +1,4 @@
-import { window } from "vscode";
+import { window, ConfigurationTarget } from "vscode";
 import { getConfiguration, selectTargetLanguage, selectTranslateSource } from "../configuration";
 import { outputChannel } from "../extension";
 import { commentDecorationManager } from "../languageFeature/decoration";
@@ -19,7 +19,7 @@ export async function changeTranslateSource() {
         let success = await translateExtensionProvider.switchTranslate(targetSource);
         if (success) {
             const configuration = getConfiguration();
-            await configuration.update('source', targetSource);
+            await configuration.update('source', targetSource, ConfigurationTarget.Global);
             const msg = `Switch translate source to '${targetSource}'.`;
             outputChannel.appendLine(msg);
         } else {

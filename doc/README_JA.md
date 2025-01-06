@@ -37,7 +37,7 @@
   > - 事前にGitHub Copilot Chatプラグインをインストールし、その認可を受ける必要があります。
   > - GitHub Copilotユーザー向けに、現在はChatボックス内での翻訳をサポートしており、コメントやテキストなどの内容の翻訳にはこの機能を使用できません。
 
-このプラグインはGitHub Copilotを拡張し、Chatボックス内で`@translate`を使用して翻訳を行うことができます。Copilotが提供するAI大モデルを使用してテキストを翻訳し、翻訳先の言語はCommentTranslateの設定されたターゲット言語になります。エディター内でテキストを選択した後、コマンドを使用して迅速にGitHub Copilot Chatに送信して翻訳することができます。
+このプラグインはGitHub Copilotを拡張し、Chatボックス内で`@translate`を使用して翻訳を行うことができます。Copilotが提供するAI大モデルを使用してテキストを翻訳し、翻訳先の言語はMTranCodeの設定されたターゲット言語になります。エディター内でテキストを選択した後、コマンドを使用して迅速にGitHub Copilot Chatに送信して翻訳することができます。
 ![copilot](./image/copilot.gif)
 
 ## 有用なコマンド
@@ -62,15 +62,15 @@
 サードパーティが提供する翻訳サービスは、プラグインマーケットで`@tag:translateSource`を検索して見つけることができます。ユーザーはプラグイン設定を通じて使用する翻訳サービスを選択するか、カスタム翻訳サービスを拡張することができます。 [詳細リンク](https://github.com/intellism/vscode-comment-translate/wiki/Translation-Service)
 
 ## 一般的な設定
-* `commentTranslate.hover.enabled`: ホバー翻訳のオン/オフ（ステータスで迅速に設定可能）
-* `commentTranslate.hover.concise`: 簡潔モードのオン/オフ。オンにすると、ctrlまたはcommandを押したときにのみホバー翻訳がトリガーされます。
-* `commentTranslate.hover.string`: 文字列ホバー翻訳のオン/オフ
-* `commentTranslate.hover.content`: 翻訳ホバーコンテンツのオン/オフ
-* `commentTranslate.multilineMerge`: 複数行コメントのマージ
-* `commentTranslate.targetLanguage`: 翻訳ターゲット言語。設定がない場合はvscodeのローカル言語を使用します。（ステータスで迅速に設定可能）
-* `commentTranslate.source`: 翻訳サービスソースの設定。コマンドを通じて設定することをお勧めします。 プラグイン拡張翻訳サービスソースをサポートします。 [例](https://github.com/intellism/deepl-translate)
-* `commentTranslate.maxTranslationLength`: 最大翻訳長の設定。過長文字列の翻訳による過剰な料金を回避します。
-* `commentTranslate.browse.enabled`: プロジェクト没入ブラウズ翻訳機能のオン/オフ
+* `mtrancode.hover.enabled`: ホバー翻訳のオン/オフ（ステータスで迅速に設定可能）
+* `mtrancode.hover.concise`: 簡潔モードのオン/オフ。オンにすると、ctrlまたはcommandを押したときにのみホバー翻訳がトリガーされます。
+* `mtrancode.hover.string`: 文字列ホバー翻訳のオン/オフ
+* `mtrancode.hover.content`: 翻訳ホバーコンテンツのオン/オフ
+* `mtrancode.multilineMerge`: 複数行コメントのマージ
+* `mtrancode.targetLanguage`: 翻訳ターゲット言語。設定がない場合はvscodeのローカル言語を使用します。（ステータスで迅速に設定可能）
+* `mtrancode.source`: 翻訳サービスソースの設定。コマンドを通じて設定することをお勧めします。 プラグイン拡張翻訳サービスソースをサポートします。 [例](https://github.com/intellism/deepl-translate)
+* `mtrancode.maxTranslationLength`: 最大翻訳長の設定。過長文字列の翻訳による過剰な料金を回避します。
+* `mtrancode.browse.enabled`: プロジェクト没入ブラウズ翻訳機能のオン/オフ
 
 ## サポート
 

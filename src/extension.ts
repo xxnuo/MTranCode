@@ -19,7 +19,7 @@ import { registerCompletion } from './languageFeature/completion';
 import { getUserLanguage, initTranslate } from './translate/manager';
 import { registerChatParticipant } from './copilot/translate';
 
-export let outputChannel = window.createOutputChannel('Comment Translate');
+export let outputChannel = window.createOutputChannel('MTranCode');
 
 
 export let ctx: ExtensionContext;
@@ -29,7 +29,7 @@ export async function activate(context: ExtensionContext) {
 
     // Languages capable of parsing comments via TextMate
     let canLanguages: string[] = await getCanLanguageIds();
-    let translateManager = initTranslate(context);
+    let translateManager = await initTranslate(context);
     translateManager.onTranslate(e => {
         outputChannel.append(e);
     });

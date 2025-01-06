@@ -37,7 +37,7 @@
   > - GitHub Copilot Chat 플러그인을 미리 설치하고 권한을 가져야 합니다.
   > - GitHub Copilot 사용자에 대해 현재 Chat 상자 내에서 번역을 지원하며, 주석, 텍스트 등의 내용은 이 기능을 사용하여 번역할 수 없습니다.
 
-이 플러그인은 GitHub Copilot을 확장하여 Chat 상자에서 `@translate`를 통해 번역할 수 있으며, Copilot이 제공하는 AI 대모델을 사용하여 텍스트를 번역합니다. 번역 대상 언어는 CommentTranslate 설정의 대상 언어입니다. Editor에서 텍스트를 선택한 후 명령을 통해 GitHub Copilot Chat으로 빠르게 전송하여 번역할 수 있습니다.
+이 플러그인은 GitHub Copilot을 확장하여 Chat 상자에서 `@translate`를 통해 번역할 수 있으며, Copilot이 제공하는 AI 대모델을 사용하여 텍스트를 번역합니다. 번역 대상 언어는 MTranCode 설정의 대상 언어입니다. Editor에서 텍스트를 선택한 후 명령을 통해 GitHub Copilot Chat으로 빠르게 전송하여 번역할 수 있습니다.
 ![copilot](./image/copilot.gif)
 
 ## 유용한 명령
@@ -62,15 +62,15 @@
 타사 번역 서비스는 플러그인 마켓에서 `@tag:translateSource`를 검색하여 찾을 수 있습니다. 사용자는 플러그인 설정을 통해 사용할 번역 서비스를 선택하거나 번역 서비스를 사용자 정의하여 확장할 수 있습니다. [더 많은 링크](https://github.com/intellism/vscode-comment-translate/wiki/Translation-Service)
 
 ## 자주 사용하는 설정
-* `commentTranslate.hover.enabled`: Hover 번역 켜기/끄기 (상태를 통해 빠르게 설정 가능)
-* `commentTranslate.hover.concise`: 간결 모드 켜기/끄기. 켜면 ctrl 또는 command를 눌러야 Hover 번역이 트리거됩니다.
-* `commentTranslate.hover.string`: 문자열 Hover 번역 켜기/끄기
-* `commentTranslate.hover.content`: 번역 Hover 내용 켜기/끄기
-* `commentTranslate.multilineMerge`: 여러 줄 주석 병합
-* `commentTranslate.targetLanguage`: 번역 대상 언어, 설정이 없으면 vscode 로컬 언어를 사용합니다. (상태를 통해 빠르게 설정 가능)
-* `commentTranslate.source`: 번역 서비스 소스 설정. 명령을 통해 설정 완료를 권장합니다. 플러그인 확장 번역 서비스 소스를 지원합니다. [예시](https://github.com/intellism/deepl-translate)
-* `commentTranslate.maxTranslationLength`: 최대 번역 길이 설정. 너무 긴 문자 번역으로 인한 과도한 요금 문제를 피하기 위해 설정합니다.
-* `commentTranslate.browse.enabled`: 프로젝트 몰입형 브라우징 번역 기능 켜기/끄기
+* `mtrancode.hover.enabled`: Hover 번역 켜기/끄기 (상태를 통해 빠르게 설정 가능)
+* `mtrancode.hover.concise`: 간결 모드 켜기/끄기. 켜면 ctrl 또는 command를 눌러야 Hover 번역이 트리거됩니다.
+* `mtrancode.hover.string`: 문자열 Hover 번역 켜기/끄기
+* `mtrancode.hover.content`: 번역 Hover 내용 켜기/끄기
+* `mtrancode.multilineMerge`: 여러 줄 주석 병합
+* `mtrancode.targetLanguage`: 번역 대상 언어, 설정이 없으면 vscode 로컬 언어를 사용합니다. (상태를 통해 빠르게 설정 가능)
+* `mtrancode.source`: 번역 서비스 소스 설정. 명령을 통해 설정 완료를 권장합니다. 플러그인 확장 번역 서비스 소스를 지원합니다. [예시](https://github.com/intellism/deepl-translate)
+* `mtrancode.maxTranslationLength`: 최대 번역 길이 설정. 너무 긴 문자 번역으로 인한 과도한 요금 문제를 피하기 위해 설정합니다.
+* `mtrancode.browse.enabled`: 프로젝트 몰입형 브라우징 번역 기능 켜기/끄기
 
 ## 지원하기
 

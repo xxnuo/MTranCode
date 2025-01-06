@@ -322,7 +322,7 @@ function createHoverMarkdownString(
     const base64TranslatedText = Buffer.from(translatedText).toString("base64");
     const space = "&nbsp;&nbsp;";
     const separator = `${space}|${space}`;
-    const replace = `[$(replace)](command:commentTranslate._replaceRange?${encodeURIComponent(
+    const replace = `[$(replace)](command:mtrancode._replaceRange?${encodeURIComponent(
         JSON.stringify({
             uri,
             range: { start: range.start, end: range.end },
@@ -331,17 +331,17 @@ function createHoverMarkdownString(
     )} "Replace")`;
     const multiLine = getConfig<boolean>("multiLineMerge");
     const combine = `[$(${multiLine ? "selection" : "remove"
-        })](command:commentTranslate._toggleMultiLineMerge "Toggle Combine Multi Line")`;
+        })](command:mtrancode._toggleMultiLineMerge "Toggle Combine Multi Line")`;
 
     // bugfix: JSON.stringify Range会变成数组。 传到下游会有问题。
-    const addSelection = `[$(heart)](command:commentTranslate._addSelection?${encodeURIComponent(
+    const addSelection = `[$(heart)](command:mtrancode._addSelection?${encodeURIComponent(
         JSON.stringify({ range: { start: range.start, end: range.end } })
     )} "Add Selection")`;
 
-    const translate = `[$(sync)](command:commentTranslate.changeTranslateSource "Change translate source")`;
+    const translate = `[$(sync)](command:mtrancode.changeTranslateSource "Change translate source")`;
 
     const header = new MarkdownString(
-        `[Comment Translate]${space}${replace}${space}${combine}${space}${addSelection}${separator}${translate}${space}${translateLink}`,
+        `[MTranCode]${space}${replace}${space}${combine}${space}${addSelection}${separator}${translate}${space}${translateLink}`,
         true
     );
     header.isTrusted = true;
@@ -356,7 +356,7 @@ function createHoverMarkdownString(
     );
     if (!translatedText) {
         md = new MarkdownString(
-            `**Translate Error**: Check [OutputPannel](command:commentTranslate._openOutputPannel "open output pannel") for details.`
+            `**Translate Error**: Check [OutputPannel](command:mtrancode._openOutputPannel "open output pannel") for details.`
         );
         md.isTrusted = true;
     }

@@ -30,7 +30,7 @@ export async function selectTargetLanguage(placeHolder: string = 'Select target 
             quickPick.placeholder = placeHolder;
             let button = {
                 iconPath: new ThemeIcon('settings-gear'),
-                tooltip: 'Open Comment Translate setting.'
+                tooltip: 'Open MTranCode setting.'
             };
 
             let changeTranslateSourceButton = {
@@ -42,11 +42,11 @@ export async function selectTargetLanguage(placeHolder: string = 'Select target 
             quickPick.onDidTriggerButton(async item => {
                 if (item === button) {
                     await commands.executeCommand('workbench.action.openWorkspaceSettings', {
-                        query: 'commentTranslate'
+                        query: 'mtrancode'
                     });
                 }
                 if (item === changeTranslateSourceButton) {
-                    await commands.executeCommand('commentTranslate.changeTranslateSource');
+                    await commands.executeCommand('mtrancode.changeTranslateSource');
                 }
             });
             quickPick.onDidChangeSelection((r) => {
@@ -70,8 +70,8 @@ export async function selectTargetLanguage(placeHolder: string = 'Select target 
 
 export async function showHoverStatusBar() {
     let bar = window.createStatusBarItem();
-    bar.command = 'commentTranslate.toggleEnableHover';
-    bar.tooltip = 'Comment translate toggle enable hover.';
+    bar.command = 'mtrancode.toggleEnableHover';
+    bar.tooltip = 'MTranCode toggle enable hover.';
 
     let setLanguageText = async () => {
         let enableHover = getConfig<boolean>('hover.enabled');
@@ -80,7 +80,7 @@ export async function showHoverStatusBar() {
     await setLanguageText();
     bar.show();
     workspace.onDidChangeConfiguration(async eventNames => {
-        if (eventNames.affectsConfiguration('commentTranslate')) {
+        if (eventNames.affectsConfiguration('mtrancode')) {
             await setLanguageText();
         };
     });
@@ -88,10 +88,10 @@ export async function showHoverStatusBar() {
 }
 export async function showTargetLanguageStatusBarItem(userLanguage: string) {
     let targetBar = window.createStatusBarItem();
-    targetBar.command = 'commentTranslate.changeTargetLanguage';
+    targetBar.command = 'mtrancode.changeTargetLanguage';
     // targetBar.tooltip = 'Comment translate target language. click to change';
 
-    const translate = `Comment translate target language. click to change. [Change translate source](command:commentTranslate.changeTranslateSource "Change translate source")`;
+    const translate = `MTranCode target language. click to change. [Change translate source](command:mtrancode.changeTranslateSource "Change translate source")`;
 
     let tooltip = new MarkdownString(translate);
     tooltip.isTrusted = true;
@@ -109,14 +109,14 @@ export async function showTargetLanguageStatusBarItem(userLanguage: string) {
     await setLanguageText();
     targetBar.show();
     workspace.onDidChangeConfiguration(async eventNames => {
-        if (eventNames.affectsConfiguration('commentTranslate')) {
+        if (eventNames.affectsConfiguration('mtrancode')) {
             await setLanguageText();
         };
     });
 
     return targetBar;
 }
-const PREFIXCONFIG = 'commentTranslate';
+const PREFIXCONFIG = 'mtrancode';
 export function getConfiguration() {
     return workspace.getConfiguration(PREFIXCONFIG);
 }
